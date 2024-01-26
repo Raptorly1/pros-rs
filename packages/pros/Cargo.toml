@@ -32,5 +32,12 @@ hashbrown = { version = "0.14.1", default-features = true }
 async-task = { version = "4.5.0", default-features = false }
 waker-fn = "1.1.1"
 
+pros-graphics = { path = "../pros-graphics", version = "0.0.1", optional = true }
+
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 dlmalloc = { version = "0.2.4", features = ["global"] }
+
+[features]
+default = []
+
+graphics = ["dep:pros-graphics"]

@@ -81,6 +81,9 @@ pub mod lvgl;
 pub mod time;
 pub mod usd;
 
+#[cfg(feature = "graphics")]
+pub use pros_graphics;
+
 pub type Result<T = ()> = core::result::Result<T, alloc::boxed::Box<dyn core::error::Error>>;
 
 pub trait AsyncRobot {

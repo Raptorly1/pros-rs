@@ -22,7 +22,7 @@ pub mod rotation;
 pub mod rtos;
 pub mod vision;
 
-use core::ffi::{c_char, c_int, c_void};
+use core::ffi::{c_char, c_int, c_uint, c_void};
 
 pub use adi::*;
 pub use colors::*;
@@ -56,4 +56,12 @@ extern "C" {
     pub fn puts(s: *const c_char) -> i32;
     pub fn exit(code: i32) -> !;
     pub fn write(fd: c_int, buf: *const c_void, count: usize) -> isize;
+    pub fn vexDisplayCopyRect(
+        x1: c_uint,
+        y1: c_uint,
+        x2: c_uint,
+        y2: c_uint,
+        color: *const c_uint,
+        unknown: c_uint,
+    );
 }

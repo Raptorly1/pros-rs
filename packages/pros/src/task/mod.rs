@@ -408,6 +408,6 @@ pub unsafe fn suspend_all() -> SchedulerSuspendGuard {
 #[doc(hidden)]
 pub fn __init_entrypoint() {
     unsafe {
-        pros_sys::lcd_initialize();
+        // pros_sys::lcd_initialize();
     }
 }
